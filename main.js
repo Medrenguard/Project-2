@@ -1,6 +1,6 @@
 "use strict";
 var u = new Url();
-var a = document.querySelectorAll('a'); //pre
+var a = document.querySelectorAll('a.nv'); //pre
 var lm = leftMenu;
 var el1 = content;
 var el2;
@@ -43,7 +43,7 @@ function map(trig, h, notion, id) {
 		if (el2) {
 			lm.innerHTML = '<ul>';
 			for (var i2 = 0; i2 < el2.length && el2[i2][1]; i2++) {
-				document.querySelector('#leftMenu ul').innerHTML += '<li><a tax="t=' + el2[i2][0] + '" pr="2" data-index=' + i2 + '>' + el2[i2][1] + '</a></li>';
+				document.querySelector('#leftMenu ul').innerHTML += '<li><a class="nv" tax="t=' + el2[i2][0] + '" pr="2" data-index=' + i2 + '>' + el2[i2][1] + '</a></li>';
 			};
 		} else {
 			alertBug();
@@ -56,7 +56,7 @@ function map(trig, h, notion, id) {
 			alertBug();
 		};
 	};
-	a = document.querySelectorAll('a');
+	a = document.querySelectorAll('a.nv');
 };
 
 updFields();
@@ -66,7 +66,7 @@ updA();
 document.body.addEventListener('click', updA);
 
 function updA() {
-	a = document.querySelectorAll('a');
+	a = document.querySelectorAll('a.nv');
 	for (var i = 0; i < a.length; i++) {
 		a[i].onclick = function (e) {
 
