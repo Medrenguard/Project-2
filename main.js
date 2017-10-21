@@ -3,14 +3,45 @@ var u = new Url();
 var a = document.querySelectorAll('a'); //pre
 var lm = leftMenu;
 var el1 = content;
+var tmp1;
+var tmp2;
 var count = 0;
-function map(h, notion, id) {
-	lm.innerHTML = '<ul>';
-	for (var i2 = 0; i2 < h.length && h[i2][1]; i2++) {
-		document.querySelector('#leftMenu ul').innerHTML += '<li><a tax="t=' + h[i2][0] + '" pr="2">' + h[i2][1] + '</a></li>';
-		count++;
+function map(trig, h, notion, id) {
+	if (trig === 0) {
+		lm.innerHTML = '<ul>';
+		for (var i2 = 0; i2 < h.length && h[i2][1]; i2++) {
+			document.querySelector('#leftMenu ul').innerHTML += '<li><a tax="t=' + h[i2][0] + '" pr="2">' + h[i2][1] + '</a></li>';
+			count++;
+		};
+		a = document.querySelectorAll('a');	
+	} else if (trig === 1) {
+		switch(h) {
+			case 'text':
+			tmp1 = text;
+			break;
+			case 'img':
+			tmp1 = img;
+			break;
+			case 'audio':
+			tmp1 = audio;
+			break;
+			case 'video':
+			tmp1 = video;
+			break;
+			case 'anim':
+			tmp1 = anim;
+			break;
+			case 'interactive':
+			tmp1 = interactive;
+			break;
+		};
+		for (var i = 0; i < tmp1.length; i++) {
+			if (tmp1[i][0] == notion) {
+				content.innerHTML = tmp1[i][2] + tmp1[i][3] + tmp1[i][4];
+				break;
+			};
+		};
 	};
-	a = document.querySelectorAll('a');
 };
 
 updFields();
@@ -43,22 +74,27 @@ function updUrl(e) {
 function updFields(e) {
 	switch(u.query.c){
 		case 'text':
-		map(text);
+		map(0, text);
 		break;
 		case 'img':
-		map(img);
+		map(0, img);
 		break;
 		case 'audio':
-		map(audio);
+		map(0, audio);
 		break;
 		case 'video':
-		map(video);
+		map(0, video);
 		break;
 		case 'anim':
-		map(anim);
+		map(0, anim);
 		break;
 		case 'interactive':
-		map(interactive);
+		map(0, interactive);
 		break;
+	};
+	if (e) {
+		// console.log(e);
+	} else if (u.query.t) {
+		map(1, u.query.c, u.query.t);
 	};
 };
