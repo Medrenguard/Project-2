@@ -3,14 +3,14 @@ var u = new Url();
 var a = document.querySelectorAll('a'); //pre
 var lm = leftMenu;
 var el1 = content;
+var di;
 var tmp1;
-var tmp2;
 var count = 0;
 function map(trig, h, notion, id) {
 	if (trig === 0) {
 		lm.innerHTML = '<ul>';
 		for (var i2 = 0; i2 < h.length && h[i2][1]; i2++) {
-			document.querySelector('#leftMenu ul').innerHTML += '<li><a tax="t=' + h[i2][0] + '" pr="2">' + h[i2][1] + '</a></li>';
+			document.querySelector('#leftMenu ul').innerHTML += '<li><a tax="t=' + h[i2][0] + '" pr="2" data-index=' + i2 + '>' + h[i2][1] + '</a></li>';
 			count++;
 		};
 		a = document.querySelectorAll('a');	
@@ -35,12 +35,8 @@ function map(trig, h, notion, id) {
 			tmp1 = interactive;
 			break;
 		};
-		for (var i = 0; i < tmp1.length; i++) {
-			if (tmp1[i][0] == notion) {
-				content.innerHTML = tmp1[i][2] + tmp1[i][3] + tmp1[i][4];
-				break;
-			};
-		};
+		di = document.querySelector('[tax="t='+notion+'"]').getAttribute('data-index');
+		el1.innerHTML = '<b>' + tmp1[di][2] + '</b> <i>' + tmp1[di][3] + '</i> - ' + tmp1[di][4];
 	};
 };
 
@@ -93,7 +89,7 @@ function updFields(e) {
 		break;
 	};
 	if (e) {
-		// console.log(e);
+		console.log(e.target);
 	} else if (u.query.t) {
 		map(1, u.query.c, u.query.t);
 	};

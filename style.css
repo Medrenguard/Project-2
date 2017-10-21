@@ -19,7 +19,6 @@ header {
 }
 .wrap.main {
 	display: flex;
-	flex-wrap: wrap;
 }
 #leftMenu {
 	min-width: 200px;
@@ -37,4 +36,5 @@ header {
 }
 #content {
 	flex-grow: 1;
+    padding: 1em;
 }
