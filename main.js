@@ -8,8 +8,8 @@ var el3;
 var di;
 var tmp1;
 
-function alertBug() {
-	el1.innerHTML = 'Упс! Такой страницы не существует.';
+function alertError() {
+	el1.innerHTML = '<span class="error">Упс! Такой страницы не существует.</span>';
 };
 
 function findThisArr(value) {
@@ -46,14 +46,14 @@ function map(trig, h, notion, id) {
 				document.querySelector('#leftMenu ul').innerHTML += '<li><a class="nv" tax="t=' + el2[i2][0] + '" pr="2" data-index=' + i2 + '>' + el2[i2][1] + '</a></li>';
 			};
 		} else {
-			alertBug();
+			alertError();
 		};
 	} else if (trig === 1) {
 		if (el3) {
 			di = el3.getAttribute('data-index');
 			el1.innerHTML = '<b>' + el2[di][2] + '</b> <i>' + el2[di][3] + '</i> - ' + el2[di][4];
 		} else {
-			alertBug();
+			alertError();
 		};
 	};
 	a = document.querySelectorAll('a.nv');
@@ -98,6 +98,9 @@ function updFields(e) {
 	} else {
 		if (e.target.getAttribute('pr') == 1) {
 			map(0, u.query.c);
+			if (content.querySelector('.error')) {
+				content.innerHTML = '';
+			};
 		} else if (e.target.getAttribute('pr') == 2) {
 			map(1, u.query.c, u.query.t);
 		};

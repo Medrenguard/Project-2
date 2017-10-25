@@ -23,10 +23,16 @@ header {
 #leftMenu {
 	min-width: 200px;
     border-right: 1px solid;
+    padding: 1em 0.5em 0.5em 1em;
+    box-sizing: border-box;
 }
 #leftMenu ul {
 	list-style-type: none;
-    padding-left: 1.5em;
+    padding-left: 0.5em;
+    margin: 0;
+}
+#leftMenu .nv {
+	cursor: default;
 }
 #leftMenu ul li:before {
     content:  "-";
