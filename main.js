@@ -12,6 +12,14 @@ function alertError() {
 	el1.innerHTML = '<span class="error">Упс! Такой страницы не существует.</span>';
 };
 
+function inputImg() {
+	if (el2[di][5]) {
+		return '<figure class="mImg"><a href="img/' + el2[di][0] + '-m.jpg" target="_blank"><img src="img/' + el2[di][0] + '-m.jpg"></a><figcaption>' + el2[di][5] + '</figcaption></figure>';
+	} else {
+		return '';
+	}
+};
+
 function findThisArr(value) {
 	switch(value) {
 		case 'text':
@@ -51,7 +59,7 @@ function map(trig, h, notion, id) {
 	} else if (trig === 1) {
 		if (el3) {
 			di = el3.getAttribute('data-index');
-			el1.innerHTML = '<b>' + el2[di][2] + '</b> <i>' + el2[di][3] + '</i> - ' + el2[di][4];
+			el1.innerHTML = inputImg() + '<p><b>' + el2[di][2] + '</b> <i>' + el2[di][3] + '</i> - ' + el2[di][4] + '</p>';
 		} else {
 			alertError();
 		};
