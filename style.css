@@ -18,6 +18,9 @@ header {
 .nav a {
 	padding: 10px;
 }
+a.nv {
+	user-select: none;
+}
 .wrap.main {
 	display: flex;
 }
@@ -41,6 +44,17 @@ header {
     left: -0.5em;
     top: -0.1em;
 }
+.hello section {
+    margin: 10px 0;
+}
+.hello a[target="_blank"] {
+    background: url(blank.png) 2px 4px no-repeat;
+    padding-left: 15px;
+    color: #0000CD;
+}
+.hello a:visited {
+	color: #0000CD;
+}
 #content {
 	flex-grow: 1;
     padding: 1em;
@@ -51,10 +65,18 @@ header {
 #content p:first-of-type {
 	margin-top: 0;
 }
+#content ul {
+	padding: 0;
+}
+#content ul li {
+	margin-left: 22px;
+}
 .mImg {
 	float: right;
     width: 228px;
     margin: 0px 3% 1% 3%;
+    padding: 4px;
+    border: 1px solid rgba(161, 161, 161, 0.5);
 }
 .mImg img {
 	width: 100%;
@@ -63,8 +85,6 @@ header {
     margin-top: -5px;
     padding: 5px 4px 9px 4px;
     font-size: 90%;
-    border: 1px solid rgba(161, 161, 161, 0.45);
-    border-top: none;
 }
 footer {
 	border-top: 1px solid;
