@@ -34,9 +34,6 @@ function findThisArr(value) {
 		case 'video':
 		tmp1 = video;
 		break;
-		case 'anim':
-		tmp1 = anim;
-		break;
 		case 'interactive':
 		tmp1 = interactive;
 		break;
