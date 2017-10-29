@@ -5,6 +5,7 @@ var lm = leftMenu;
 var el1 = content;
 var el2;
 var el3;
+var subTitle;
 var di;
 var tmp1;
 
@@ -24,18 +25,23 @@ function findThisArr(value) {
 	switch(value) {
 		case 'text':
 		tmp1 = text;
+		subTitle = 'Текст';
 		break;
 		case 'img':
 		tmp1 = img;
+		subTitle = 'Графика';
 		break;
 		case 'audio':
 		tmp1 = audio;
+		subTitle = 'Аудио';
 		break;
 		case 'video':
 		tmp1 = video;
+		subTitle = 'Видео';
 		break;
 		case 'interactive':
 		tmp1 = interactive;
+		subTitle = 'Интерактивность';
 		break;
 	};
 	return tmp1;
@@ -46,7 +52,7 @@ function map(trig, h, notion, id) {
 	el3 = document.querySelector('[tax="t='+notion+'"]');
 	if (trig === 0) {
 		if (el2) {
-			lm.innerHTML = '<ul>';
+			lm.innerHTML = '<div class="sub-title">' + subTitle + '</div><ul>';
 			for (var i2 = 0; i2 < el2.length && el2[i2][1]; i2++) {
 				document.querySelector('#leftMenu ul').innerHTML += '<li><a class="nv" tax="t=' + el2[i2][0] + '" pr="2" data-index=' + i2 + '>' + el2[i2][1] + '</a></li>';
 			};

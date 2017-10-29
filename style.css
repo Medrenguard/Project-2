@@ -56,8 +56,14 @@ a.nv {
 #leftMenu {
 	min-width: 210px;
     border-right: 1px solid;
-    padding: 1em 0.5em 1em 1em;
+    padding: 0.5em 0.5em 1em 1em;
     box-sizing: border-box;
+}
+#leftMenu .sub-title {
+	margin-bottom: 0.5em;
+    border-bottom: 1px solid;
+    padding: 0px 0px 2px 0.5em;
+    font-weight: 900;
 }
 #leftMenu ul {
 	list-style-type: none;
