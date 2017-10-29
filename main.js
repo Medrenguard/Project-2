@@ -61,6 +61,10 @@ function map(trig, h, notion, id) {
 		};
 	} else if (trig === 1) {
 		if (el3) {
+			if (document.querySelector('#leftMenu .active')) {
+				document.querySelector('#leftMenu .active').classList.remove('active');
+			};
+			el3.parentElement.classList.add('active');
 			di = el3.getAttribute('data-index');
 			el1.innerHTML = inputImg() + '<p><b>' + el2[di][2] + '</b> <i>' + el2[di][3] + '</i> - ' + el2[di][4] + '</p>';
 		} else {
