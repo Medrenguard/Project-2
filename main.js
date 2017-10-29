@@ -15,7 +15,7 @@ function alertError() {
 
 function inputImg() {
 	if (el2[di][5]) {
-		return '<figure class="mImg"><a href="img/' + el2[di][0] + '-m.jpg" target="_blank"><img src="img/' + el2[di][0] + '-m.jpg"></a><figcaption>' + el2[di][5] + '</figcaption></figure>';
+		return '<figure class="mImg"><a href="img/content/' + el2[di][0] + '-m.jpg" target="_blank"><img src="img/content/' + el2[di][0] + '-m.jpg"></a><figcaption>' + el2[di][5] + '</figcaption></figure>';
 	} else {
 		return '';
 	}
