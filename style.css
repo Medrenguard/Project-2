@@ -44,8 +44,18 @@ a.nv {
     left: -0.5em;
     top: -0.1em;
 }
+.hello {
+	margin: 2%;
+    line-height: 1.4em;
+}
 .hello section {
     margin: 10px 0;
+}
+.hello ul {
+	padding-left: 1%;
+}
+.hello ul li {
+	margin-left: 22px;
 }
 .hello a[target="_blank"] {
     background: url(blank.png) 2px 4px no-repeat;
