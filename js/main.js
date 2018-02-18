@@ -7,7 +7,7 @@ var el2;
 var el3;
 var subTitle;
 var di;
-var tmp1;
+var section;
 
 function alertError() {
 	el1.innerHTML = '<span class="error">Упс! Такой страницы не существует.</span>';
@@ -24,27 +24,27 @@ function inputImg() {
 function findThisArr(value) {
 	switch(value) {
 		case 'text':
-		tmp1 = text;
+		section = text;
 		subTitle = 'Текст';
 		break;
 		case 'img':
-		tmp1 = img;
+		section = img;
 		subTitle = 'Графика';
 		break;
 		case 'audio':
-		tmp1 = audio;
+		section = audio;
 		subTitle = 'Аудио';
 		break;
 		case 'video':
-		tmp1 = video;
+		section = video;
 		subTitle = 'Видео';
 		break;
 		case 'interactive':
-		tmp1 = interactive;
+		section = interactive;
 		subTitle = 'Интерактивность';
 		break;
 	};
-	return tmp1;
+	return section;
 };
 
 function map(trig, h, notion, id) {

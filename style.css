@@ -55,7 +55,7 @@ a.nv {
 	min-height: calc(100vh - 164px);
 }
 #leftMenu {
-	min-width: 210px;
+	min-width: 215px;
 	border-right: 1px solid rgba(0, 0, 0, 0.19);
 	padding: 0.5em 0.5em 1em 1em;
 	box-sizing: border-box;
@@ -113,7 +113,7 @@ a.nv {
 	padding-left: 15px;
 	color: #0000CD;
 }
-.hello a:visited {
+.hello a:visited, footer a:visited {
 	color: #0000CD;
 }
 #content {
@@ -140,7 +140,7 @@ a.nv {
 }
 .mImg {
 	float: right;
-	width: 228px;
+	width: 227px;
 	margin: 0px 3% 1% 3%;
 	padding: 4px;
 	border: 1px solid rgba(161, 161, 161, 0.5);
